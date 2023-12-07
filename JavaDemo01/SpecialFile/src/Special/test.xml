@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--注释-->
+
+<users>
+    <user id="1">
+        <name>FZH</name>
+        <age>18</age>
+        <adress>安徽新华学院</adress>
+    </user>
+    <user id="2">
+        <name>GTboy</name>
+        <age>19</age>
+        <adress>安徽新华学院</adress>
+        [<![CDATA[
+            1>2
+        ]]>
+    </user>
+    <user>
+        <name>XF</name>
+        <age>18</age>
+        <adress>安徽新华学院</adress>
+    </user>
+    <admin id="3">
+        <name>主管</name>
+        <age>29</age>
+        <adress>安徽新华学院集团</adress>
+    </admin>
+    <admin>
+        <name>BOSS</name>
+        <age>33</age>
+        <adress>大别墅</adress>
+    </admin>
+</users>

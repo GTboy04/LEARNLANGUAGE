@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/IOStream.iml" filepath="$PROJECT_DIR$/IOStream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../SpecialFile/SpecialFile.iml" filepath="$PROJECT_DIR$/../SpecialFile/SpecialFile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../TreadLearn/TreadLearn.iml" filepath="$PROJECT_DIR$/../TreadLearn/TreadLearn.iml" />
+    </modules>
+  </component>
+</project>
