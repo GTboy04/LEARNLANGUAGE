@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body style="margin: 50px;">
+		<table border="1" width="1000">
+			<tr style="background-color: #999;">
+				<th><input type="checkbox"></th>
+				<th>分类ID</th>
+				<th>分类名称</th>
+				<th>分类描述</th>
+				<th>操作</th>
+			</tr>
+			<tr>
+				<td align="center"><input type="checkbox" name="chekbox"></td>
+				<td>1</td>
+				<td>手机数码</td>
+				<td>手机数码类商品</td>
+				<td><a href="">修改</a>|<a href="">删除</a></td>
+			</tr>
+			<tr>
+				<td align="center"><input type="checkbox" name="chekbox"></td>
+				<td>2</td>
+				<td>电脑办公</td>
+				<td>电脑办公类商品</td>
+				<td><a href="">修改</a>|<a href="">删除</a></td>
+			</tr>
+			<tr>
+				<td align="center"><input type="checkbox" name="chekbox"></td>
+				<td>3</td>
+				<td>鞋靴箱包</td>
+				<td>鞋靴箱包类商品</td>
+				<td><a href="">修改</a>|<a href="">删除</a></td>
+			</tr>
+			<tr>
+				<td align="center"><input type="checkbox" name="chekbox"></td>
+				<td>4</td>
+				<td>家居饰品</td>
+				<td>家居饰品类商品</td>
+				<td><a href="">修改</a>|<a href="">删除</a></td>
+			</tr>
+		</table>
+        <script>
+            // 实现各行换色
+            let trs = document.getElementsByTagName("tr")
+            for (let index = 1; index < trs.length; index++) {
+                if(index % 2 === 0){
+                    trs[index].style = "background-color: pink"
+
+                }else{
+                    trs[index].style = "background-color: #FFFFFF"
+                }
+            }
+
+            
+        </script>
+	</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>ajax和json综合</h1>
+<!--
+    获取好友列表
+-->
+<input type="button" value="响应数据是json字符串" onclick="method01()"> <br>
+<hr>
+<h3>好友列表</h3>
+<!--存放查询好友的结果信息-->
+<div id="messageDiv"></div>
+<table width="500px" cellspacing="0px" cellpadding="5px" border="1px" id="myTable">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>age</th>
+    </tr>
+    <!-- <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr> -->
+
+</table>
+
+</body>
+<!--导入axios库-->
+<script type="text/javascript" src="js/axios-0.18.0.js"></script>
+<script type="text/javascript">
+    /*
+      需求：向后台发送请求，获取好友列表并显示到页面中
+      说明：后台的url地址： "http://localhost:8080/axiosJsonDemo01Servlet"
+     */
+
+     function method01() {
+        //向后台发送请求
+        // data.valueData
+        axios.get("http://localhost:8080/axiosJsonDemo01Servlet").then(resp=>{
+            console.log(resp)
+            if(resp.data.flag){
+                let Friends = resp.data.valueData
+                for (let index = 0; index < Friends.length; index++) {
+                    document.querySelector("#myTable").insertRow().innerHTML = `
+                <tr>
+                    <td>${Friends[index].id}</td>
+                    <td>${Friends[index].name}</td>
+                    <td>${Friends[index].age}</td>
+                </tr>
+                `
+            }
+            }
+            
+
+        }).catch(err=>{
+            console.log(err)
+        })
+    }
+</script>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用axios发送异步请求</title>
+</head>
+<body>
+<!--  不能在文本中书写js代码-->
+<script type="text/javascript" src="js/axios-0.18.0.js"></script>
+<script type="text/javascript">
+    //1.使用axios对象调用函数向后台服务器发送ajax异步请求
+    /*
+        整体： axios.get().then().catch().finally();
+          1）get()函数表示两后台服务器发送get请求，格式：
+              get(url?key=value&key=value...);===axios.get("/axiosDemo01Servlet?username=锁哥&password=1234")
+          2)then() 处理后台服务器响应的，格式：
+                then(function(接收响应数据的对象名){
+                    处理响应的代码
+                });
+
+                then(function (resp){
+                 console.log(resp);
+             })
+             后台响应数据：
+                resp={
+                        data: 'axios实现ajax异步get请求,username=锁哥',
+                        status: 200,
+                        statusText: '',
+                        headers: {…},
+                        config: {…},
+                    }
+
+                resp.data就可以获取 数据： axios实现ajax异步get请求,username=锁哥
+
+          3)catch() :处理异常
+                catch(function (error) {
+                    console.log(error);
+                })
+
+                let person ={
+                    username:"锁哥",
+                    age:18
+                }
+        小结：
+          1.get函数：建立和服务器的连接，在参数中书写连接服务器的url和请求参数
+          2.then函数：书写处理响应数据的，在该函数的参数位置书写回调函数
+          3.catch函数：书写处理响应错误信息数据的，在该函数的参数位置书写回调函数
+          4.finally函数：无论响应成功还是失败都要执行的代码，在该函数的参数位置书写回调函数
+     */
+    /*
+        说明：
+                1.http://localhost:8080/axiosDemo02Servlet 表示后台服务器地址
+                2.username=锁哥&password=1234：表示向后台携带的参数，和地址之间使用?分隔
+    */
+    axios.get("http://localhost:8080/axiosDemo02Servlet?username=锁哥&password=1234")
+         .then(function (response) {
+             //处理响应数据的回调函数体代码，response表示接受服务器响应数据的对象，该对象中具有重要属性是data
+            console.log(response);
+            console.log(response.data);
+          })
+        .catch(function (error) {
+            //书写处理响应错误信息数据的，在该函数的参数位置书写回调函数
+            console.log(error);
+            console.log('后台出现异常了，执行catch');
+         })
+        .finally(function () {
+             //无论响应成功还是失败都要执行的代码，在该函数的参数位置书写回调函数
+             console.log('我是必须执行的...');
+         });
+   
+</script>
+</body>
+</html>

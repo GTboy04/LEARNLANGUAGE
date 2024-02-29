@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="checkbox" id="ck" />
+		<hr />
+		<div id="div">
+			<input type="checkbox"/><br />
+			<input type="checkbox" /><br />
+			<input type="checkbox" /><br />
+			<input type="checkbox" /><br />
+			<input type="checkbox" />
+		</div>
+        <script>
+            // 全选/全不选
+            let keyCk = document.getElementById("ck")
+
+            keyCk.addEventListener("click",function(){
+                let inputs = document.querySelectorAll("#div input")
+                if(keyCk.checked){
+                    for (let index = 0; index < inputs.length; index++) {
+                    inputs[index].checked = true          
+                }
+                }else{
+                    for (let index = 0; index < inputs.length; index++) {
+                    inputs[index].checked = false          
+                }
+                }
+                
+            })
+        </script>
+	</body>
+</html>

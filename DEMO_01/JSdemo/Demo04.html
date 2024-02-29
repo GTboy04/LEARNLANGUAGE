@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+<!--width="100%"表示自适应父容器body的大小，这里就是整个页面-->
+<!--由于页面上此时还会有边框，所以这里直接将边框去掉就可以，拿掉 border="1"-->
+<table cellspacing="0" width="100%" cellpadding="0">
+    <tr>
+        <td>
+            <!--topbar : 1行3列表格-->
+            <table width="100%">
+                <tr>
+                    <!--这里的&nbsp;&nbsp;为了能够让
+                        黑马程序员的图片向右靠一些
+                    -->
+                    <td>&nbsp;&nbsp;<img src="img/logo2.png" /></td>
+                    <td><img src="img/header.jpg" /></td>
+                    <td align="center">
+                        <!--这里的&nbsp;为了能够让登录、注册和购物车之间的距离大一点-->
+                        <a href="javascript:;">登录</a>&nbsp;
+                        <a href="javascript:;">注册</a>&nbsp;
+                        <a href="javascript:;">购物车</a>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <!--导航条：1行2列表格-->
+            <!--
+                width="100%" 表示适应父标签大小
+                bgcolor="black" 表示表格背景颜色是黑色
+                height 表示表格高度是50
+            -->
+            <table width="100%" bgcolor="black" height="50">
+                <tr>
+                    <td>
+                        <!--
+                            &nbsp;&nbsp; 表示首页字体向右靠靠
+                        -->
+                        &nbsp;&nbsp;
+                        <a href="javascript:;">
+                            <font color="white" size="5">首页</font>
+                        </a>&nbsp;
+                        <!--&nbsp; 在这里表示
+                            首页  手机数码  电脑办公  电脑办公  电脑办公  电脑办公距离大一些
+                        -->
+                        <a href="javascript:;">
+                            <font color="white">手机数码</font>
+                        </a>&nbsp;
+                        <a href="javascript:;">
+                            <font color="white">电脑办公</font>
+                        </a>&nbsp;
+                        <a href="javascript:;">
+                            <font color="white">电脑办公</font>
+                        </a>&nbsp;
+                        <a href="javascript:;">
+                            <font color="white">电脑办公</font>
+                        </a>
+                    </td>
+                    <!--
+                        align="right" 表示输入的文本框和提交按钮在表格最右面
+                    -->
+                    <td align="right">
+                        <!--placeholder 属性表示文本框中默认显示的内容-->
+                        <!--
+                            <input type="text"/> 表示输入文本框
+                            <input type="button"/> 表示按钮
+                        -->
+                        <input type="text" placeholder="Search" />
+                        <input type="button" value="Submit" />&nbsp;&nbsp;
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <!--轮播图：一张图片-->
+            <!--轮播图暂时不书写，这里只写一张图片-->
+            <img src="img/1.jpg" width="100%" id="myImg"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <!--热门商品：3行7列表格-->
+            <table width="100%">
+                <tr>
+                    <td colspan="7">
+                        <!--
+                        注意：在html中有种标签叫做块级标签，只能自己独立占一行。
+                        这样的标签有：标题标签hn、段落标签p、列表标签ul等
+                        但是我们这里需要让热门商品的字和图片在一行，我们可以将
+                        图片放到h3标题中
+                        -->
+                        <h3>热门商品&nbsp;<img src="img/title2.jpg"/></h3>
+                    </td>
+                    <!--<td colspan="6">
+                        &nbsp;<img src="img/title2.jpg"/>
+                    </td>-->
+                </tr>
+                <!--
+                     align="center" 为了让这一行所有列都居中
+                -->
+                <tr align="center">
+                    <!--
+                        rowspan="2" 为了让这一列跨2行
+                    -->
+                    <td rowspan="2">
+                        <img src="img/big01.jpg" width="205" height="404" />
+                    </td>
+                    <!--
+                        colspan="3" 为了让这一列跨3列
+                    -->
+                    <td colspan="3">
+                        <img src="img/middle01.jpg" />
+                    </td>
+                    <td>
+                        &nbsp;&nbsp;<img src="img/small03.jpg" /><br />
+                        <a href="javascript:;">
+                            <font color="black">冬瓜</font>
+                        </a><br />
+                        <font color="red">¥299.00</font>
+                    </td>
+                    <td>
+                        &nbsp;&nbsp;<img src="img/small03.jpg" /><br />
+                        <a href="javascript:;">
+                            <font color="black">冬瓜</font>
+                        </a><br />
+                        <font color="red">¥299.00</font>
+                    </td>
+                    <td>
+                        &nbsp;&nbsp;<img src="img/small03.jpg" /><br />
+                        <a href="javascript:;">
+                            <font color="black">冬瓜</font>
+                        </a><br />
+                        <font color="red">¥299.00</font>
+                    </td>
+                </tr>
+                <tr align="center">
+                    <!--<td></td>-->
+                    <!--由于上一行的第一列跨2行，所以这一行的第一列去掉-->
+                    <td>
+                        &nbsp;&nbsp;<img src="img/small03.jpg" /><br />
+                        <a href="javascript:;">
+                            <font color="black">冬瓜</font>
+                        </a><br />
+                        <font color="red">¥299.00</font>
+                    </td>
+                    <td>
+                        &nbsp;&nbsp;<img src="img/small03.jpg" /><br />
+                        <a href="javascript:;">
+                            <font color="black">冬瓜</font>
+                        </a><br />
+                        <font color="red">¥299.00</font>
+                    </td>
+                    <td>
+                        &nbsp;&nbsp;<img src="img/small03.jpg" /><br />
+                        <a href="javascript:;">
+                            <font color="black">冬瓜</font>
+                        </a><br />
+                        <font color="red">¥299.00</font>
+                    </td>
+                    <td>
+                        &nbsp;&nbsp;<img src="img/small03.jpg" /><br />
+                        <a href="javascript:;">
+                            <font color="black">冬瓜</font>
+                        </a><br />
+                        <font color="red">¥299.00</font>
+                    </td>
+                    <td>
+                        &nbsp;&nbsp;<img src="img/small03.jpg" /><br />
+                        <a href="javascript:;">
+                            <font color="black">冬瓜</font>
+                        </a><br />
+                        <font color="red">¥299.00</font>
+                    </td>
+                    <td>
+                        &nbsp;&nbsp;<img src="img/small03.jpg" /><br />
+                        <a href="javascript:;">
+                            <font color="black">冬瓜</font>
+                        </a><br />
+                        <font color="red">¥299.00</font>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <!--广告：一张图片-->
+            <img src="img/ad.jpg" width="100%" />
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <!--热门商品：3行7列表格-->
+            <table width="100%">
+                <tr>
+                    <td colspan="7">
+                        <!--
+                        注意：在html中有种标签叫做块级标签，只能自己独立占一行。
+                        这样的标签有：标题标签hn、段落标签p、列表标签ul等
+                        但是我们这里需要让热门商品的字和图片在一行，我们可以将
+                        图片放到h3标题中
+                        -->
+                        <h3>热门商品&nbsp;<img src="img/title2.jpg"/></h3>
+                    </td>
+                    <!--<td colspan="6">
+                        &nbsp;<img src="img/title2.jpg"/>
+                    </td>-->
+                </tr>
+                <!--
+                     align="center" 为了让这一行所有列都居中
+                -->
+                <tr align="center">
+                    <!--
+                        rowspan="2" 为了让这一列跨2行
+                    -->
+                    <td rowspan="2">
+                        <img src="img/big01.jpg" width="205" height="404" />
+                    </td>
+                    <!--
+                        colspan="3" 为了让这一列跨3列
+                    -->
+                    <td colspan="3">
+                        <img src="img/middle01.jpg" />
+                    </td>
+                    <td>
+                        &nbsp;&nbsp;<img src="img/small03.jpg" /><br />
+                        <a href="javascript:;">
+                            <font color="black">冬瓜</font>
+                        </a><br />
+                        <font color="red">¥299.00</font>
+                    </td>
+                    <td>
+                        &nbsp;&nbsp;<img src="img/small03.jpg" /><br />
+                        <a href="javascript:;">
+                            <font color="black">冬瓜</font>
+                        </a><br />
+                        <font color="red">¥299.00</font>
+                    </td>
+                    <td>
+                        &nbsp;&nbsp;<img src="img/small03.jpg" /><br />
+                        <a href="javascript:;">
+                            <font color="black">冬瓜</font>
+                        </a><br />
+                        <font color="red">¥299.00</font>
+                    </td>
+                </tr>
+                <tr align="center">
+                    <!--<td></td>-->
+                    <!--由于上一行的第一列跨2行，所以这一行的第一列去掉-->
+                    <td>
+                        &nbsp;&nbsp;<img src="img/small03.jpg" /><br />
+                        <a href="javascript:;">
+                            <font color="black">冬瓜</font>
+                        </a><br />
+                        <font color="red">¥299.00</font>
+                    </td>
+                    <td>
+                        &nbsp;&nbsp;<img src="img/small03.jpg" /><br />
+                        <a href="javascript:;">
+                            <font color="black">冬瓜</font>
+                        </a><br />
+                        <font color="red">¥299.00</font>
+                    </td>
+                    <td>
+                        &nbsp;&nbsp;<img src="img/small03.jpg" /><br />
+                        <a href="javascript:;">
+                            <font color="black">冬瓜</font>
+                        </a><br />
+                        <font color="red">¥299.00</font>
+                    </td>
+                    <td>
+                        &nbsp;&nbsp;<img src="img/small03.jpg" /><br />
+                        <a href="javascript:;">
+                            <font color="black">冬瓜</font>
+                        </a><br />
+                        <font color="red">¥299.00</font>
+                    </td>
+                    <td>
+                        &nbsp;&nbsp;<img src="img/small03.jpg" /><br />
+                        <a href="javascript:;">
+                            <font color="black">冬瓜</font>
+                        </a><br />
+                        <font color="red">¥299.00</font>
+                    </td>
+                    <td>
+                        &nbsp;&nbsp;<img src="img/small03.jpg" /><br />
+                        <a href="javascript:;">
+                            <font color="black">冬瓜</font>
+                        </a><br />
+                        <font color="red">¥299.00</font>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <!--footer:2行1列表格-->
+            <table width="100%">
+                <tr>
+                    <td>
+                        <img src="img/footer.jpg" width="100%" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        <a href="javascript:;">关于我们 </a>
+                        <a href="javascript:;">联系我们 </a>
+                        <a href="javascript:;">招贤纳士 </a>
+                        <a href="javascript:;">法律声明</a>
+                        <a href="javascript:;">友情链接 </a>
+                        <a href="javascript:;">支付方式 </a>
+                        <a href="javascript:;">配送方式 </a>
+                        <a href="javascript:;">服务声明 </a>
+                        <a href="javascript:;"> 广告声明 </a>
+                        <!--
+                            这里使用段落标签是因为我们观看页面发现上面和下面之间有间隙
+                        -->
+                        <p>Copyright &copy; 2005-2016 传智商城 版权所有</p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<script>
+    let img = document.getElementById("myImg")
+    let index = 2
+    setInterval(function () {
+        img.src = `img/${index}.jpg`
+        index++
+        if(index === 4){
+            index = 1
+        }
+    },2000)
+</script>
+</body>
+</html>
