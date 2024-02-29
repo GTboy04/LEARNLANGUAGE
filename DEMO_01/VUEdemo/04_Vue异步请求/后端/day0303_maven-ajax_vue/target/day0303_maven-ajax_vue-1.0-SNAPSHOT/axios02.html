@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>异步请求案例</title>
+    <script src="js/vue.js"></script>
+    <script src="js/axios-0.18.0.js"></script>
+
+</head>
+<body>
+<div id="div">
+    <h1>登录页面</h1>
+    <!--
+        v-model="user.username" :使用双向数据表绑定
+    -->
+    <input type="text" name="username" placeholder="请输入用户名" v-model="user.username"> <br>
+    <input type="password" name="password" placeholder="请输入密码" v-model="user.password"><br>
+    <button @click="send()">登录</button>
+
+
+    <h1>主页: 显示好友列表</h1>
+    <ul>
+        <li v-for="element in list">
+            {{element.id}},{{element.name}},{{element.age}}
+        </li>
+    </ul>
+</div>
+
+</body>
+<script>
+    new Vue({
+        el: "#div",
+        data: {
+            user: {},
+            list: []
+        },
+        methods: {
+            send: function () {
+                //1.当点击登录按钮，向后台发送请求获取好友列表，并将用户名和密码数据提交到后台
+                // user: {"username":"锁哥","password":"1234"}
+                axios.post("/day16/axiosDemo02Servlet",this.user)//this.user就是json格式的数据：{"username":"锁哥","password":"1234"}
+                     .then(resp=>{
+                         //2.接收响应数据
+                         let obj = resp.data;
+                         //3.判断
+                         if(obj.flag){
+                             //查询成功
+                             //4.将后台响应的集合数据赋值给data中的list
+                             this.list=obj.valueData;
+                         }else{
+                             //查询失败
+                         }
+                     });
+            }
+        }
+    });
+</script>
+</html>

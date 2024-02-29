@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用axios发送异步请求</title>
+</head>
+<body>
+<!--  不能再文本中书写js代码-->
+<script type="text/javascript" src="js/axios-0.18.0.js"></script>
+<script type="text/javascript">
+    //1.使用axios对象调用函数向后台服务器发送ajax异步请求
+    /*
+        整体： axios.post().then().catch().finally();
+          1）post()函数表示向后台服务器发送post请求，格式：
+              post(url,key=value&key=value...);===axios.post("/axiosDemo01Servlet","username=锁哥&password=1234")
+          2)then() 处理后台服务器响应的，格式：
+                then(function(接收响应数据的对象名){
+                    处理响应的代码
+                });
+            其实在then函数中的回调函数我们可以使用es6的新语法，箭头函数：
+                (参数)=>{函数体}
+            格式：
+            then(resp=>{
+                    函数体
+            });
+     */
+    /*
+             说明：
+                1.http://localhost:8080/axiosDemo03Servlet 表示后台服务器地址
+                2.username=锁哥&password=1234：表示向后台携带的参数
+    */
+    //使用es6的箭头函数简化上述回调函数的写法
+    axios.post("http://localhost:8080/axiosDemo03Servlet","username=GTboy&password=1234").then(resp=>{
+        console.log(resp)
+        console.log(resp.data)
+    }).catch(err=>{
+        console.log(err)
+    }).finally(()=>{
+        console.log("必须执行的地方");
+    })
+
+
+
+
+
+</script>
+</body>
+</html>

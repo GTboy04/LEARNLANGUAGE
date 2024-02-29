@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>快速入门</title>
+</head>
+<body>
+    <!-- view--视图 -->
+        <div id="app">
+            <!-- {{数据模型中的数据}}插值语法 -->
+            {{msg}}
+        </div>
+</body>
+<!-- 导入vue库 -->
+<script src="js/vue.js"></script>
+<script>
+    // 定义vue,注意是小括号包个大括号
+    new Vue({
+// 将vue脚本与视图练习起来
+        el:"#app",
+        // 数据模型--用来存放数据
+        data:{
+            msg:"vue入门练习"
+        }
+    })
+
+</script>
+</html>

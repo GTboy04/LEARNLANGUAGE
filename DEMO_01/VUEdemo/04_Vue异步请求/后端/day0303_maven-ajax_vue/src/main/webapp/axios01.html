@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>异步操作</title>
+    <script src="js/vue.js"></script>
+    <!--
+        引入axios核心js文件
+    -->
+    <script src="js/axios-0.18.0.js"></script>
+</head>
+<body>
+<div id="div">
+    {{name}}
+    <!--全称写法 v-on:click="send()"   -->
+    <button @click="send()">发起请求</button>
+</div>
+</body>
+<script>
+    new Vue({
+        el:"#div",
+        data:{
+            name:"张三",
+            age:18
+        },
+        methods:{
+            send(){
+                //1.发送异步请求
+                //说明：后台url的地址   "/axiosDemo01Servlet"
+                axios.get("/axiosDemo01Servlet")
+                     .then(resp=>{
+                         console.log(resp.data);
+                     });
+            }
+        }
+    });
+</script>
+</html>

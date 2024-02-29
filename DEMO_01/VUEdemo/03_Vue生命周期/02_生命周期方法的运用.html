@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生命周期</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    {{message}}
+    <div v-for="user in list">
+        {{user.name}}
+    </div>
+
+    <hr>
+</div>
+</body>
+<script>
+
+    new Vue({
+        el:"#app",
+        data:{
+            message:"好友列表",
+            list:[] //用户信息的集合
+        },
+        methods:{
+            queryUsers(){
+                //向后台发起查询
+                console.log("呵呵")
+            }
+        },
+
+        //vue实例创建完成后要来执行的一个生命周期的方法
+        created(){
+            //一般我们在这个方法中去对数据进行初始化，比如调用queryUsers方法从后台查询初始数据对list变量赋值
+            this.queryUsers();
+        }
+    });
+</script>
+</html>
